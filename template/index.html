@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Algorizin ML prediction</title>
+  </head>
+
+  <body>
+    <div class="login">
+      <div class="banner">
+        <h1>StatWitch</h1>
+      </div>
+      <p>This model is created to determine your job landing score. <br /></p>
+
+      <form action="{{ url_for('predict')}}" method="post" target="_blank">
+        <label for="Reason"> 1. Why do you want to work here? </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br /><br />
+        <select id="Reason" name="Reason">
+          <option disabled selected value>-- Select an option --</option>
+          <option value="access">access</option>
+          <option value="immigration">immigration</option>
+          <option value="mentoring">mentoring</option>
+          <option value="reputation">reputation</option>
+        </select>
+        <br /><br />
+
+        <label for="Relocation">2. Are you willing to relocate? </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br /><br />
+        <select id="Relocation" name="Relocation">
+          <option disabled selected value>-- Select an option --</option>
+          <option value="yes">yes</option>
+          <option value="no">no</option>
+        </select>
+
+        <br /><br />
+        <p>
+          Please provide any number between 0 - 20 for next two questions. 20 is
+          the strongest. <br />
+        </p>
+        <label for="Jobskill"
+          >3. How confident you are in about the job role?
+        </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br /><br />
+        <input type="text" name="Jobskill" required="required" />
+        <br /><br />
+
+        <label for="techskill"
+          >4. How confident you are in about your technical skill?
+        </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br /><br />
+        <input type="text" name="techskill" required="required" />
+        <br /><br />
+
+        <p style="text-align: center">
+          <input
+            type="submit"
+            ,
+            value="Submit"
+            style="height: 30px; width: 70px"
+          />
+        </p>
+      </form>
+    </div>
+  </body>
+</html>
+
+<style type="text/css">
+  .login {
+    height: 620px;
+    width: 600px;
+    border: 1px solid rgb(187, 187, 187);
+    background-color: #e9ece9;
+    opacity: 0.7;
+    padding: 20px 50px;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 16px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+</style>
